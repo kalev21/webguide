@@ -1,0 +1,22 @@
+{% extends 'guide/base.html' %}
+{% load static %}
+
+{% block title %}
+    Создание
+{% endblock %}
+
+
+{% block handler %}
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            {% for el in form %}
+                <div class="mb-3">
+                    {{ el.label }}
+                    {{ el }}
+                </div>
+            {% endfor %}
+            <a href="/create"><button class="btn btn-danger" type="submit">Создать</button></a>
+        </form>
+    </div>
+{% endblock %}

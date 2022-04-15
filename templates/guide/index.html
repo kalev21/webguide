@@ -1,0 +1,52 @@
+{% extends 'guide/base.html' %}
+{% load static %}
+
+{% block title %}
+    Главная
+{% endblock %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Проводник</title>
+    <link href="{% static 'guide/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'guide/css/bootstrap.mini.css' %}" rel="stylesheet">
+</head>
+<body>
+{% block folder %}
+    <main>
+        <div class="container">
+            <div class="row align-items-start">
+                <div class="col">
+                    <a href="/"><img src="{% static 'guide/img/folder_1.png' %}" alt="folder"></a>
+                </div>
+                <div class="col">
+                    <a href="/"><img src="{% static 'guide/img/folder_1.png' %}" alt="folder"></a>
+                </div>
+                <div class="col">
+                    <a href="/"><img src="{% static 'guide/img/folder_1.png' %}" alt="folder"></a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            {% for folder in folders %}
+            <div class="col">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <p class="card-text">{{ folder.name|truncatewords:"20"}}</p>
+                  </div>
+                </div>
+            </div><br>
+          {% empty %}
+            <div class="content-center">
+                <h2>Пока нет папок</h2>
+            </div>
+          {% endfor %}
+        </div>
+    </main>
+{% endblock %}
+    <script src="{% static 'guide/js/all.js' %}"></script>
+    <script src="{% static 'guide/js/bootstrap.js' %}"></script>
+</body>
+</html>

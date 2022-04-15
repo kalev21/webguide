@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Проводник</title>
+    <link href="{% static 'guide/css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'guide/css/bootstrap.mini.css' %}" rel="stylesheet">
+</head>
+<body>
+<header class="d-flex justify-content-center py-3">
+  <ul class="nav nav-pills">
+    <li><a href="/create"><button class="btn btn-link" type="submit">Создать</button></a></li>
+    <li><a href="/create"><button class="btn btn-link" type="submit">Загрузить</button></a></li>
+    <li><a href="/create"><button class="btn btn-link" type="submit">Скачать</button></a></li>
+  </ul>
+</header>
+<main>
+{% block folder %}
+    <main>
+        <div class="container">
+            <div class="row align-items-start">
+                <div class="col">
+                    <a href="/"><img src="{% static 'guide/img/folder_1.png' %}" alt="folder"></a>
+                </div>
+                <div class="col">
+                    <a href="/"><img src="{% static 'guide/img/folder_1.png' %}" alt="folder"></a>
+                </div>
+                <div class="col">
+                    <a href="/"><img src="{% static 'guide/img/folder_1.png' %}" alt="folder"></a>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+</main>
+    <script src="{% static 'guide/js/all.js' %}"></script>
+    <script src="{% static 'guide/js/bootstrap.js' %}"></script>
+</body>
+</html>
